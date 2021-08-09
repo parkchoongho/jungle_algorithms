@@ -33,5 +33,6 @@ for _ in range(cut_count):
 
 print(max(a_list) * max(b_list))
 
+
         
             
