@@ -1,3 +1,6 @@
+import sys
+
+
 def quick_sort(input_list, left, right):
     pl = left
     pr = right
@@ -19,11 +22,12 @@ def quick_sort(input_list, left, right):
         quick_sort(input_list, pl, right)
 
 
-num = int(input())
+num = int(sys.stdin.readline())
 input_list = []
 
 for i in range(num):
-    input_list.append(int(input()))
+    tmp = int(sys.stdin.readline())
+    input_list.append(tmp)
 
 
 quick_sort(input_list, 0, len(input_list) - 1)
