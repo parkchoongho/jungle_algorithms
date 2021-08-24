@@ -111,13 +111,13 @@ for _ in range(N):
 
 
 def bfs(coins, target_value):
-    value_queue = Queue()
+    value_enqueue = Queue()
     for coin in coins:
         if coin <= target_value:
-            value_queue.enqueue(Node(coin, 1))
+            value_enqueue.enqueue(Node(coin, 1))
             visited[coin] = True
-    while value_queue.size > 0:
-        node = value_queue.dequeue()
+    while value_enqueue.size > 0:
+        node = value_enqueue.dequeue()
         if node.val == target_value:
             return node.count
         for coin in coins:
@@ -126,7 +126,7 @@ def bfs(coins, target_value):
             if cum > target_value:
                 continue
             elif cum <= target_value and visited[cum] == False:
-                value_queue.enqueue(Node(cum, cnt))
+                value_enqueue.enqueue(Node(cum, cnt))
                 visited[cum] = True
     return -1
 
